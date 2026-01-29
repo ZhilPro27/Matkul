@@ -34,6 +34,10 @@ class ProgramStudiEditViewModel(
             UIStateProgramStudi(detailProgramStudi = detailProgramStudi, isEntryValid = validasiInput(detailProgramStudi))
     }
 
+    suspend fun deleteProgramStudi(){
+        repositoriProgramStudi.deleteProgramStudi(uiStateProgramStudi.detailProgramStudi.toProgramStudi())
+    }
+
     private fun validasiInput(uiState: DetailProgramStudi = uiStateProgramStudi.detailProgramStudi): Boolean {
         return with(uiState){
             namaProgramStudi.isNotBlank()
