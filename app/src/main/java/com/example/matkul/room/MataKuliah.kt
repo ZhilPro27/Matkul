@@ -26,3 +26,11 @@ data class MataKuliah(
     val idProgramStudi: Int,
 )
 
+data class MataKuliahDetail(
+    val id: Int,
+    val namaMataKuliah: String,
+    val jumlahSKS: Int,
+    val dosenPengampu: String,
+    val tanggalUpdate: Long,
+    val namaProgramStudi: String
+)

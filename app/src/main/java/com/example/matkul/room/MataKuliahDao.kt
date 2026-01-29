@@ -29,4 +29,11 @@ interface MataKuliahDao {
     @Transaction
     @Query("SELECT * FROM tblMataKuliah WHERE idProgramStudi = :idProdi")
     fun getMataKuliahByProgramStudi(idProdi: Int) : Flow<List<MataKuliah>>
+
+    @Query("""
+    SELECT mk.*, ps.namaProgramStudi 
+    FROM tblMataKuliah mk 
+    JOIN tblProgramStudi ps ON mk.idProgramStudi = ps.id
+""")
+    fun getAllMataKuliahWithNamaProdi(): Flow<List<MataKuliahDetail>>
 }

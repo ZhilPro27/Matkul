@@ -52,7 +52,7 @@ fun ProgramStudiScreen(
         topBar = {
             MatkulTopAppBar(
                 title = DestinasiProgramStudi.tittleRes,
-                canNavigateBack = false,
+                canNavigateBack = true,
                 scrollBehavior = scrollBehavior
             )
         },
